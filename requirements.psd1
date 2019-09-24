@@ -15,7 +15,7 @@
         Version = '0.3.0'
     }
     'PSScriptAnalyzer' = @{
-        Version = '1.18.3'
+        Version = '1.18.1'
     }
     'platyPS' = @{
         Version = '0.14.0'
