@@ -1,5 +1,5 @@
 # Don't check in the Output dir
-BuildOutput/
+Output/
 .DS_Store
 
 # OS generated files #
