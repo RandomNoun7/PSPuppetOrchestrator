@@ -2,7 +2,11 @@ properties {
     # Controls whether to "compile" module into single PSM1 or not
     $PSBPreference.Build.CompileModule = $true
     # Output file path Pester will save test results to
-    $testResultsFile = Join-Path -Path $env:BHBuildOutput -ChildPath 'testResults.xml'
+    $outputDir       = Join-Path -Path $ENV:BHProjectPath -ChildPath 'Output'
+    $outputModDir    = Join-Path -Path $outputDir -ChildPath $env:BHProjectName
+    $manifest        = Import-PowerShellDataFile -Path $env:BHPSModuleManifest
+    $outputModVerDir = Join-Path -Path $outputModDir -ChildPath $manifest.ModuleVersion
+    $testResultsFile = Join-Path -Path $outputModVerDir -ChildPath 'testResults.xml'
     $PSBPreference.Test.OutputFile = $testResultsFile
 }
 
