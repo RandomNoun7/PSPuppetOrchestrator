@@ -10,5 +10,5 @@ task Test -FromModule PowerShellBuild -Version '0.3.0'
 task UploadTestResults {
     # upload results to AppVeyor
     $wc = New-Object 'System.Net.WebClient'
-    $wc.UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Join-Path -Path $OutputDir -ChildPath 'testResults.xml'))
+    $wc.UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Join-Path -Path $ENV:BHBuildOutput -ChildPath 'testResults.xml'))
 } -description 'Uploading tests'
