@@ -1,6 +1,6 @@
-| Appveyor | PS Gallery | PS Gallery Version|
-|--------|--------|--------|
-![Build status](https://ci.appveyor.com/api/projects/status/6g7fk7xes4vn5fog?svg=true) | ![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/pspuppetorchestrator) | ![PowerShell Gallery](https://img.shields.io/powershellgallery/v/pspuppetorchestrator) |
+| Appveyor | PS Gallery Downloads | PS Gallery Version|
+|----------|----------------------|-------------------|
+[![AppVeyor][appveyor-badge]][appveyor-link] | [![PowerShell Gallery][psg-downloads]][psg-link] | [![PowerShell Gallery][psg-version]][psg-link]
 
 # PSPuppetOrchestrator
 
@@ -197,3 +197,12 @@ Description : Security Update
 InstalledBy : NT AUTHORITY\SYSTEM
 InstalledOn : Thursday, September 06, 2018 12:00:00 AM
 ```
+
+## License
+Crypto_win is released under the [MIT license](http://www.opensource.org/licenses/MIT).
+
+[appveyor-badge]: https://ci.appveyor.com/api/projects/status/6g7fk7xes4vn5fog/branch/master?svg=true&passingText=master%20-%20PASSING&pendingText=master%20-%20PENDING&failingText=master%20-%20FAILING
+[appveyor-link]: https://ci.appveyor.com/project/joeypiccola/pspuppetorchestrator
+[psg-link]: https://www.powershellgallery.com/packages/PSPuppetOrchestrator
+[psg-downloads]: https://img.shields.io/powershellgallery/dt/pspuppetorchestrator
+[psg-version]: https://img.shields.io/powershellgallery/v/pspuppetorchestrator
