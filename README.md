@@ -4,7 +4,8 @@
 
 # PSPuppetOrchestrator
 
-PowerShell module for calling the Puppet Orchestrator API.
+PowerShell module for calling the [Puppet Orchestrator API](https://puppet.com/docs/pe/latest/orchestrator_api_v1_endpoints.html).
+
 
 ## Installation
 
