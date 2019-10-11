@@ -1,19 +1,16 @@
 InModuleScope PSPuppetOrchestrator {
     Describe 'Get-PuppetTask' -Tag unit {
-        function Invoke-RestMethod {}
         context 'returns tasks as expected' {
-            it "should return module task" -Skip {
-                # $ptask = 'myTask'
-                # $pModule = 'myModule'
-                # $returnTask = "$pTask::$pModule"
-                # $master = 'pm'
-                # $header_param = @{'X-Authentication' = 1}
-                # $uri_param = "https://$master`:8143/orchestrator/v1/tasks/$ptask/$pModule"
-                # $method_param = 'Get'
-                # $ea_param = 'SilentlyContinue'
-                # Mock -CommandName Invoke-RestMethod -MockWith { return @{name = $returnTask}} -ParameterFilter {$uri -eq $uri_param -and $method -eq $method_param -and $headers -eq $header_param -and $erroraction -eq $ea_param}
-                # (Get-PuppetTask -Token 1 -Master $master -Name $ptask -Module $pModule).name | should -be $returnTask
-                # Assert-MockCalled -CommandName 'Invoke-RestMethod' -Times 1 -Exactly -Scope It
+            it "should return module task" {
+                $ptask = 'myTask'
+                $pModule = 'myModule'
+                $returnTask = "$pModule::$pTask"
+                $master = 'pm'
+                $header_param = @{'X-Authentication' = 1}
+                $uri_param = "https://$master`:8143/orchestrator/v1/tasks/$pModule/$pTask"
+                Mock -Verifiable -CommandName Invoke-RestMethod -MockWith { return @{name = $returnTask}} -ParameterFilter {$Uri -eq $uri_param -and $Method -eq 'Get' -and $Headers -eq $header_param -and $ErrorAction -eq 'SilentlyContinue'}
+                (Get-PuppetTask -Token 1 -Master $master -Name $ptask -Module $pModule).name | should -be $returnTask
+                #Assert-MockCalled -CommandName 'Invoke-RestMethod' -Times 1 -Exactly -Scope It # -ParameterFilter {$uri -eq $uri_param}
             }
             it "should return built-in task" -Skip {
                 # $ptask = 'reboot'
